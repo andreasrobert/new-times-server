@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 const app = express();
 
+console.log(process.env.DATABASE_URL)
+
 var PORT = Number(process.env.PORT || 4000);
 var HOST = process.env.HOST || "0.0.0.0";
 
