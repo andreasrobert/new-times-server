@@ -8,6 +8,8 @@ router.get('/', (_,res) =>{
     res.send("hello there");
 })
 
+
+
 router.get("/todos", async (_req, res)=>{
     try{
         const allTodos = await pool.query("SELECT * FROM todo");
@@ -57,6 +59,10 @@ router.delete("/todos/:id", async (req, res)=>{
     }catch(err){
         console.log(err.meesage)
     }
+})
+
+router.get("*", (_req,res)=>{
+    res.send("hello there");
 })
 
 export default router;
