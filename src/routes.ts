@@ -32,6 +32,9 @@ router.get("/todos/:id", async (req, res)=>{
 router.post("/todos", async (req, res)=>{
     try{
         const {description} = req.body
+        console.log("here")
+        console.log(description)
+        console.log("there")
         const newTodo = await pool.query("INSERT INTO todo (description) VALUES ($1) RETURNING *", [description]);
         res.json(newTodo.rows[0])
 
